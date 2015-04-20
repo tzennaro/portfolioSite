@@ -41,6 +41,10 @@ d3.json('./data/about.json', function (error, data) {
 					.domain(['education', 'work', 'experience', 'interests'])
 					.rangeRoundBands([margin, width-margin]),
 
+		projectScale = d3.scale.ordinal()
+						.domain([])
+						.range([]),
+
 //		education = textures.lines()
 //					.lighter()
 //					.thicker()
@@ -118,7 +122,8 @@ d3.json('./data/about.json', function (error, data) {
 						'y': function (d) { return yScale(parseDate(d.dateEnd)); },
 						'height': function (d) { return (yScale(parseDate(d.dateStart)) - yScale(parseDate(d.dateEnd))); },
 						'width': function (d) { 
-							if (d.type === "work" || d.type === 'education') { return xScale.rangeBand() - 2; }
+							if (d.type === 'education') { return (xScale.rangeBand()) - 2; }
+							else if (d.type === "work") { return xScale.rangeBand() - 2; }
 							else if (d.type === "interests") { return 2; }
 							else { return (xScale.rangeBand() / dataFilter.length) - 2; }
 						},
