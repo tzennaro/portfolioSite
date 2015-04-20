@@ -173,6 +173,20 @@
 		"icon": "\uf0c3"
 	},
 	{
+		"name": "Reading",
+		"dateStart": "2008-08-01",
+		"dateEnd": "2020-01-01",
+		"type": "interests",
+		"icon": "\uf02d"
+	},
+	{
+		"name": "Music",
+		"dateStart": "2008-08-01",
+		"dateEnd": "2020-01-01",
+		"type": "interests",
+		"icon": "\uf001"
+	},
+	{
 		"name": "Data visualization",
 		"dateStart": "2011-02-01",
 		"dateEnd": "2020-01-01",

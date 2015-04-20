@@ -116,7 +116,7 @@ d3.json('./data/about.json', function (error, data) {
 						'class': function () { return 'sub' + idGroup; },
 						'x': function (d, i) {
 							if (d.type === "work" || d.type === 'education') { return xScale(d.type); }
-							else if (d.type === "interests") { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)); }
+							else if (d.type === "interests") { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 5; }
 							else { return xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) * i); }
 						},
 						'y': function (d) { return yScale(parseDate(d.dateEnd)); },
@@ -154,7 +154,7 @@ d3.json('./data/about.json', function (error, data) {
 										else { return yScale(parseDate(d.dateStart)) + 4; }
 							},
 							'cx': function (d, i) {
-								return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) + 1; 
+								return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 4; 
 							},
 							'r': 4,
 							'stroke': '#353531',
@@ -189,8 +189,8 @@ d3.json('./data/about.json', function (error, data) {
 										else if (d.type === "experience") {  return xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) * i); }
 										else { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) + 3; }
 									},
-									'y': function (d) { 
-										if (parseDate(d.dateStart) <= startDate) { return height - margin - 5; }
+									'y': function (d, i) { 
+										if (parseDate(d.dateStart) <= startDate) { return height - margin - 5 - (15 * i); }
 										else { return yScale(parseDate(d.dateStart)) - 5; }
 									}
 								})
