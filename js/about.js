@@ -3,7 +3,7 @@
 d3.json('./data/about.json', function (error, data) {
 	var width = 1110,
 		height = 1372,
-		margin = 60,
+		margin = 75,
 		parseDate = d3.time.format("%Y-%m-%d").parse,
 		svg = d3.select('#about-graph-container')
 				.append('svg')
@@ -16,7 +16,7 @@ d3.json('./data/about.json', function (error, data) {
 		svg.append("clipPath")
 			.attr("id", "about-area")
 			.append("rect")
-			.attr("x", margin)
+			.attr("x", '0')
 			.attr("y", margin)
 			.attr("width", width)
 			.attr("height", height - (margin * 2));
@@ -94,7 +94,7 @@ d3.json('./data/about.json', function (error, data) {
 		.enter()
 		.append('g')
 		.attr('class', 'textGroup')
-		.attr("clip-path", "url(#about-area)")
+//		.attr("clip-path", "url(#about-area)")
 		.attr('id', function (d) { return 'text-' + d; });
 
 		svg.selectAll('.rectGroup')
@@ -182,12 +182,13 @@ d3.json('./data/about.json', function (error, data) {
 								.attr({
 									'font-family': 'FontAwesome, Roboto, serif',
 									'font-weight': 'regular',
+									'font-size': '11px',
 									'color': '#353531',
 									'class': function (d) { return 'labelClass-' + d.type; },
 									'x': function (d, i) {
 										if (d.type === "work" || d.type === 'education') { return xScale(d.type);}
 										else if (d.type === "experience") {  return xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) * i); }
-										else { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) + 3; }
+										else { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 1; }
 									},
 									'y': function (d, i) { 
 										if (parseDate(d.dateStart) <= startDate) { return height - margin - 5 - (15 * i); }

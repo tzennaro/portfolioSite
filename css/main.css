@@ -146,6 +146,9 @@ body {
 #about-section {
   padding-top: 50px;
 }
+#about-graph-container .axis {
+  font-size: 15px;
+}
 #about-graph-container .axis path,
 #about-graph-container .axis line {
   fill: none;
@@ -154,10 +157,6 @@ body {
 #about-graph-container .axis text {
   text-transform: capitalize;
   font-family: 'Roboto';
-  font-size: 15px;
-}
-#about-graph-container text {
-  font-size: 12px;
 }
 #sscs .modal-header {
   background: url(../img/sscs/cover.jpg) no-repeat center top;
