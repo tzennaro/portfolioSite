@@ -42,8 +42,8 @@ d3.json('./data/about.json', function (error, data) {
 					.rangeRoundBands([margin, width-margin]),
 
 		projectScale = d3.scale.ordinal()
-						.domain([])
-						.range([]),
+						.domain(["rect-sscs", "rect-typemetrics", "rect-blackmountaincollege_infographics", "rect-atlas_urbino", "rect-wttc", "rect-death_in_venice"])
+						.range(["#sscs", "#typemetrics", "#blackmountaincollege_infographics", "#atlas_urbino", "#wttc_infographics", "#death_in_venice"]),
 
 //		education = textures.lines()
 //					.lighter()
@@ -94,7 +94,6 @@ d3.json('./data/about.json', function (error, data) {
 		.enter()
 		.append('g')
 		.attr('class', 'textGroup')
-//		.attr("clip-path", "url(#about-area)")
 		.attr('id', function (d) { return 'text-' + d; });
 
 		svg.selectAll('.rectGroup')
@@ -163,6 +162,33 @@ d3.json('./data/about.json', function (error, data) {
 							'opacity': 0.35
 						});
 				}
+
+				if (this.id === 'rect-work') {
+					d3.select(this)
+						.selectAll('rect')
+						.on('mouseover', function () {
+							d3.select(this)
+								.transition()
+								.duration(150)
+								.attr({
+									'cursor':'pointer',
+									'stroke': '#353531',
+									'stroke-width': 1
+								});
+						})
+						.on('mouseout', function () {
+							d3.select(this)
+								.transition()
+								.duration(150)
+								.attr({
+									'stroke': '#353531',
+									'stroke-width': 0
+								});
+						})
+						.on('click', function (d) {
+							$(projectScale(d.id)).modal();
+						});
+				}
 			});
 
 		svg.selectAll('.textGroup')
@@ -181,6 +207,7 @@ d3.json('./data/about.json', function (error, data) {
 								.append('text')
 								.attr({
 									'font-family': 'FontAwesome, Roboto, serif',
+									'pointer-events': 'none',
 									'font-weight': 'regular',
 									'font-size': '11px',
 									'color': '#353531',
@@ -191,8 +218,8 @@ d3.json('./data/about.json', function (error, data) {
 										else { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 1; }
 									},
 									'y': function (d, i) { 
-										if (parseDate(d.dateStart) <= startDate) { return height - margin - 5 - (15 * i); }
-										else { return yScale(parseDate(d.dateStart)) - 5; }
+										if (parseDate(d.dateStart) <= startDate) { return height - margin - 2 - (15 * i); }
+										else { return yScale(parseDate(d.dateStart)) - 2; }
 									}
 								})
 								.text(function (d) {
