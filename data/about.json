@@ -1,0 +1,189 @@
+[
+	{
+		"name": "BA Degree in Industrial Design @ IUAV Venice",
+		"dateStart": "2008-10-01",
+		"dateEnd": "2011-09-21",
+		"type": "education",
+		"subtype": ""
+	},
+	{
+		"name": "MA Degree in Graphic Design @ ISIA Urbino",
+		"dateStart": "2011-10-01",
+		"dateEnd": "2014-02-20",
+		"type": "education",
+		"subtype": ""
+	},
+	{
+		"name": "BA Thesis project: Sea Shepherd Infographics",
+		"id": "rect-sscs",
+		"dateStart": "2011-07-20",
+		"dateEnd": "2011-09-21",
+		"type": "work",
+		"subtype": "schoolProject",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"illustration"
+		]
+	},
+	{
+		"name": "MA Thesis project: Typemetrics Data Visualization",
+		"id": "rect-typemetrics",
+		"dateStart": "2013-10-15",
+		"dateEnd": "2014-02-20",
+		"type": "work",
+		"subtype": "schoolProject",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"typography"
+		]
+	},
+	{
+		"name": "Black Mountain College Infographics",
+		"id": "rect-blackmountaincollege_infographics",
+		"dateStart": "2013-06-01",
+		"dateEnd": "2013-07-01",
+		"type": "work",
+		"subtype": "schoolProject",
+		"kind": [
+			"data visualization",
+			"information architecture"
+		]
+	},
+	{
+		"name": "Atlas of Public Urbino",
+		"id": "rect-atlas_urbino",
+		"dateStart": "2013-05-01",
+		"dateEnd": "2013-05-15",
+		"type": "work",
+		"subtype": "schoolProject",
+		"kind": [
+			"data visualization",
+			"information architecture"
+		]
+	},
+	{
+		"name": "World Travel & Tourism Council Infographics",
+		"id": "rect-wttc",
+		"dateStart": "2014-08-01",
+		"dateEnd": "2014-08-31",
+		"type": "work",
+		"subtype": "realProject",
+		"kind": [
+			"data visualization",
+			"typography"
+		]
+	},
+	{
+		"name": "Death in Venice",
+		"id": "rect-death_in_venice",
+		"dateStart": "2014-05-01",
+		"dateEnd": "2014-06-01",
+		"type": "work",
+		"subtype": "realProject",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"exhibition design"
+		]
+	},
+	{
+		"name": "Freelance Graphic Designer",
+		"dateStart": "2011-09-01",
+		"dateEnd": "2015-05-14",
+		"type": "experience",
+		"subtype": "",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"illustration"
+		]
+	},
+	{
+		"name": "Contractor Illustrator @ Discovery Channel",
+		"dateStart": "2013-11-01",
+		"dateEnd": "2013-12-10",
+		"type": "experience",
+		"subtype": "",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"typography"
+		]
+	},
+	{
+		"name": "Internship @ LUST",
+		"dateStart": "2014-05-01",
+		"dateEnd": "2014-08-31",
+		"type": "experience",
+		"subtype": "",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"typography"
+		]
+	},
+	{
+		"name": "Contractor Illustrator @ CURSE",
+		"dateStart": "2014-08-01",
+		"dateEnd": "2015-08-01",
+		"type": "experience",
+		"subtype": "",
+		"kind": [
+			"data visualization",
+			"illustration"
+		]
+	},
+	{
+		"name": "Freelance Information Designer @ IDA Studio",
+		"dateStart": "2014-11-01",
+		"dateEnd": "2015-06-01",
+		"type": "experience",
+		"subtype": "",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"illustration"
+		]
+	},
+	{
+		"name": "Contractor Information Designer @ Studio NAND",
+		"dateStart": "2015-02-01",
+		"dateEnd": "2015-04-30",
+		"type": "experience",
+		"subtype": "",
+		"kind": [
+			"data visualization",
+			"information architecture"
+		]
+	},
+	{
+		"name": "Drawing",
+		"dateStart": "2008-08-01",
+		"dateEnd": "2020-01-01",
+		"type": "interests",
+		"icon": "\uf040"
+	},
+	{
+		"name": "Science & Technology",
+		"dateStart": "2008-08-01",
+		"dateEnd": "2020-01-01",
+		"type": "interests",
+		"icon": "\uf0c3"
+	},
+	{
+		"name": "Data visualization",
+		"dateStart": "2011-02-01",
+		"dateEnd": "2020-01-01",
+		"type": "interests",
+		"icon": "\uf080"
+	},
+	{
+		"name": "Coding",
+		"dateStart": "2013-05-01",
+		"dateEnd": "2020-01-01",
+		"type": "interests",
+		"icon": "\uf121"
+	}
+]
