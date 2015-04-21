@@ -29,7 +29,7 @@
 	{
 		"name": "MA Thesis project: Typemetrics Data Visualization",
 		"id": "rect-typemetrics",
-		"dateStart": "2013-10-15",
+		"dateStart": "2013-10-01",
 		"dateEnd": "2014-02-20",
 		"type": "work",
 		"subtype": "schoolProject",
@@ -37,6 +37,19 @@
 			"data visualization",
 			"information architecture",
 			"typography"
+		]
+	},
+	{
+		"name": "Sansavenir Libro bianco su Taranto",
+		"id": "rect-sansavenir",
+		"dateStart": "2013-02-01",
+		"dateEnd": "2013-07-01",
+		"type": "work",
+		"subtype": "schoolProject",
+		"kind": [
+			"data visualization",
+			"information architecture",
+			"editorial design"
 		]
 	},
 	{
