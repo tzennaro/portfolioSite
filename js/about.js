@@ -2,7 +2,7 @@
 
 d3.json('./data/about.json', function (error, data) {
 	var width = 1110,
-		height = 1372,
+		height = 1250,
 		margin = 75,
 		parseDate = d3.time.format("%Y-%m-%d").parse,
 		svg = d3.select('#about-graph-container')
@@ -115,7 +115,7 @@ d3.json('./data/about.json', function (error, data) {
 						'class': function () { return 'sub' + idGroup; },
 						'x': function (d, i) {
 							if (d.type === "work" || d.type === 'education') { return xScale(d.type); }
-							else if (d.type === "interests") { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 5; }
+							else if (d.type === "interests") { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 7; }
 							else { return xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) * i); }
 						},
 						'y': function (d) { return yScale(parseDate(d.dateEnd)); },
@@ -138,7 +138,7 @@ d3.json('./data/about.json', function (error, data) {
 							else if (d.type === "experience") { return '#59d0ff'; }
 							else if (d.type === "interests") { return '#353531'; }
 						},
-						'opacity': 0.35
+						'opacity': 0.25
 					});
 
 				if (this.id === 'rect-interests') {
@@ -153,7 +153,7 @@ d3.json('./data/about.json', function (error, data) {
 										else { return yScale(parseDate(d.dateStart)) + 4; }
 							},
 							'cx': function (d, i) {
-								return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 4; 
+								return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 6; 
 							},
 							'r': 4,
 							'stroke': '#353531',
@@ -172,8 +172,7 @@ d3.json('./data/about.json', function (error, data) {
 								.duration(150)
 								.attr({
 									'cursor':'pointer',
-									'stroke': '#353531',
-									'stroke-width': 1
+									'opacity': 1
 								});
 						})
 						.on('mouseout', function () {
@@ -181,8 +180,7 @@ d3.json('./data/about.json', function (error, data) {
 								.transition()
 								.duration(150)
 								.attr({
-									'stroke': '#353531',
-									'stroke-width': 0
+									'opacity': 0.35
 								});
 						})
 						.on('click', function (d) {
@@ -215,7 +213,7 @@ d3.json('./data/about.json', function (error, data) {
 									'x': function (d, i) {
 										if (d.type === "work" || d.type === 'education') { return xScale(d.type);}
 										else if (d.type === "experience") {  return xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) * i); }
-										else { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 1; }
+										else { return (xScale(d.type) + ((xScale.rangeBand() / (dataFilter.length)) + 5) * i) + ((xScale.rangeBand() / (dataFilter.length) / 2)) - 3; }
 									},
 									'y': function (d, i) { 
 										if (parseDate(d.dateStart) <= startDate) { return height - margin - 2 - (15 * i); }

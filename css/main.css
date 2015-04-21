@@ -158,6 +158,13 @@ body {
   text-transform: capitalize;
   font-family: 'Roboto';
 }
+#footer-section {
+  margin-top: 0px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid #ff3f4c;
+  text-align: center;
+}
 #sscs .modal-header {
   background: url(../img/sscs/cover.jpg) no-repeat center top;
   background-origin: center center;
@@ -278,8 +285,7 @@ body {
   text-align: center;
 }
 #svg-scatterplot-container {
-  border: 1px solid #ccc;
-  border-radius: 2%;
+  border-radius: 0.5%;
   background-color: #fff;
 }
 #svg-scatterplot-container #tempLine {
@@ -400,8 +406,7 @@ body {
   color: #DC143C;
 }
 #svg-histogram-container {
-  border: 1px solid #ccc;
-  border-radius: 2%;
+  border-radius: 0.5%;
   background-color: #fff;
 }
 #svg-histogram-container .y.axis .domain {
