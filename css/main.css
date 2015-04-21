@@ -521,7 +521,7 @@ body {
 }
 .portfolio-modal .close-modal {
   -webkit-transform: translateZ(0);
-  color: black;
+  color: #353531;
   position: fixed;
   width: auto;
   height: auto;
@@ -531,7 +531,7 @@ body {
 }
 .portfolio-modal .close-modal span {
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 25px;
   width: 100%;
   text-align: center;
   float: left;

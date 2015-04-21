@@ -138,7 +138,7 @@ d3.json('./data/about.json', function (error, data) {
 							else if (d.type === "experience") { return '#59d0ff'; }
 							else if (d.type === "interests") { return '#353531'; }
 						},
-						'opacity': 0.25
+						'opacity': 0.35
 					});
 
 				if (this.id === 'rect-interests') {
@@ -172,7 +172,7 @@ d3.json('./data/about.json', function (error, data) {
 								.duration(150)
 								.attr({
 									'cursor':'pointer',
-									'opacity': 1
+									'opacity': 0.75
 								});
 						})
 						.on('mouseout', function () {
