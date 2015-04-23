@@ -17,7 +17,7 @@ d3.json('./data/about.json', function (error, data) {
 			.attr("id", "about-area")
 			.append("rect")
 			.attr("x", '0')
-			.attr("y", margin)
+			.attr("y", '45')
 			.attr("width", width)
 			.attr("height", height - (margin * 2));
 
@@ -35,15 +35,15 @@ d3.json('./data/about.json', function (error, data) {
 
 	var yScale = d3.time.scale()
 					.domain([startDate, endDate])
-					.range([height - margin, margin]),
+					.range([height - margin, 45]),
 
 		xScale = d3.scale.ordinal()
 					.domain(['education', 'work', 'experience', 'interests'])
 					.rangeRoundBands([margin, width-margin]),
 
 		projectScale = d3.scale.ordinal()
-						.domain(["rect-sscs", "rect-typemetrics", "rect-blackmountaincollege_infographics", "rect-atlas_urbino", "rect-wttc", "rect-death_in_venice", "rect-sansavenir"])
-						.range(["#sscs", "#typemetrics", "#blackmountaincollege_infographics", "#atlas_urbino", "#wttc_infographics", "#death_in_venice", "#sansavenir"]),
+						.domain(["rect-sscs", "rect-typemetrics", "rect-blackmountaincollege_infographics", "rect-atlas_urbino", "rect-wttc", "rect-death_in_venice", "rect-sansavenir", "rect-whale_wars"])
+						.range(["#sscs", "#typemetrics", "#blackmountaincollege_infographics", "#atlas_urbino", "#wttc_infographics", "#death_in_venice", "#sansavenir", '#whale_wars']),
 
 //		education = textures.lines()
 //					.lighter()
@@ -259,7 +259,7 @@ d3.json('./data/about.json', function (error, data) {
 		svg.append("g")
 			.attr("class", "axis")
 			.attr("id", "xaxis")
-			.attr("transform", "translate(0, " + margin + ")")
+			.attr("transform", "translate(0, 45)")
 			.call(xAxis);
 
 		//Y Axis generator

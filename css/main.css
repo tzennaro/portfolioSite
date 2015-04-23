@@ -47,6 +47,7 @@ body {
   margin-top: 50px;
   background-color: #fdfdfd;
   font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
 ::-moz-selection {
   /* Code for Firefox */
@@ -123,12 +124,12 @@ body {
 }
 .thumbnail .projectDescription .projectCredits {
   color: #353531;
-  font-size: 15px;
+  font-size: 1.5em;
 }
 .thumbnail .projectDescription .projectName {
   text-shadow: 0px 0px 10px #f4f7f5;
   color: #ff3f4c;
-  font-size: 30px;
+  font-size: 2em;
 }
 .thumbnail:hover .projectDescription {
   transition: 0.5s;
@@ -146,8 +147,12 @@ body {
 #about-section {
   padding-top: 50px;
 }
+#about-section #experience {
+  margin: 0;
+  margin-top: 25px;
+}
 #about-graph-container .axis {
-  font-size: 15px;
+  font-size: 1.5em;
 }
 #about-graph-container .axis path,
 #about-graph-container .axis line {
@@ -163,6 +168,23 @@ body {
   padding-top: 25px;
   padding-bottom: 25px;
   border-top: 1px solid #ff3f4c;
+  text-align: center;
+}
+#whale_wars .modal-header {
+  background: url(../img/whale_wars/cover.jpg) no-repeat center top;
+  background-origin: center center;
+  background-attachment: absolute;
+  background-position: center center;
+  min-height: 300px;
+  width: 100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   text-align: center;
 }
 #sscs .modal-header {
@@ -434,7 +456,7 @@ body {
   color: #ff3f4c;
 }
 .internalPar p {
-  font-size: 20px;
+  font-size: 1.5em;
   margin: 0px;
 }
 .internalPar code {
@@ -531,7 +553,7 @@ body {
 }
 .portfolio-modal .close-modal span {
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 1.5em;
   width: 100%;
   text-align: center;
   float: left;

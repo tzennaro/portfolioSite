@@ -40,6 +40,17 @@
 		]
 	},
 	{
+		"name": "Whale Wars: Blood and Water illustrations",
+		"id": "rect-whale_wars",
+		"dateStart": "2013-11-01",
+		"dateEnd": "2013-12-15",
+		"type": "work",
+		"subtype": "realProject",
+		"kind": [
+			"illustration"
+		]
+	},
+	{
 		"name": "Sansavenir Libro bianco su Taranto",
 		"id": "rect-sansavenir",
 		"dateStart": "2013-02-01",
