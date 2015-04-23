@@ -306,6 +306,23 @@ body {
   background-size: cover;
   text-align: center;
 }
+#urbino_housing .modal-header {
+  background: url(../img/urbino_housing/cover.jpg) no-repeat center top;
+  background-origin: center center;
+  background-attachment: absolute;
+  background-position: center center;
+  min-height: 300px;
+  width: 100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+}
 #svg-scatterplot-container {
   border-radius: 0.5%;
   background-color: #fff;

@@ -19,7 +19,7 @@ d3.json('./data/about.json', function (error, data) {
 			.attr("x", '0')
 			.attr("y", '45')
 			.attr("width", width)
-			.attr("height", height - (margin * 2));
+			.attr("height", height - (margin * 2) + 30);
 
 //		startDate = d3.min(data, function (d, i) { return parseDate(d.dateStart); }),
 	var startDate = parseDate('2008-08-01'),
