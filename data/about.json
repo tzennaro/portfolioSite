@@ -64,6 +64,17 @@
 		]
 	},
 	{
+		"name": "Urbino student housing Illustration",
+		"id": "rect-urbino_housing",
+		"dateStart": "2013-03-01",
+		"dateEnd": "2013-04-15",
+		"type": "work",
+		"subtype": "schoolProject",
+		"kind": [
+			"illustration"
+		]
+	},
+	{
 		"name": "Black Mountain College Infographics",
 		"id": "rect-blackmountaincollege_infographics",
 		"dateStart": "2013-06-01",
