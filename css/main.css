@@ -503,19 +503,9 @@ body {
   padding: 0px;
   padding-top: 175px;
 }
-.portfolio-modal .modal-header .header-gradient {
-  display: block;
-  height: 45px;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: -webkit-linear-gradient(top, rgba(253, 253, 253, 0), #fdfdfd);
-  background: -o-linear-gradient(bottom, rgba(253, 253, 253, 0), #fdfdfd);
-  background: -moz-linear-gradient(bottom, rgba(253, 253, 253, 0), #fdfdfd);
-  background: linear-gradient(to bottom, rgba(253, 253, 253, 0), #fdfdfd);
-}
 .portfolio-modal .modal-header .header-container {
   margin: 0;
+  margin-top: 45px;
   padding: 0;
   background-color: #fdfdfd;
 }
