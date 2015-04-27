@@ -447,5 +447,46 @@ body {
             color: @red;
         }      
     }
-
+	.prev-modal {
+		-webkit-transform: translateZ(0);
+		span {
+			text-transform: uppercase;
+			font-size: @fontSize-sm;
+			width: 100%;
+			text-align: center;
+			float: left;
+			clear: both;
+		}
+		color: @black;
+        position: fixed;
+        width:auto;
+        height:auto;
+        top: 45%;
+        left: 35px;
+        cursor: pointer;
+        &:hover {
+            color: @red;
+        }      
+    }
+	.next-modal {
+		-webkit-transform: translateZ(0);
+		span {
+			text-transform: uppercase;
+			font-size: @fontSize-sm;
+			width: 100%;
+			text-align: center;
+			float: left;
+			clear: both;
+		}
+		color: @black;
+        position: fixed;
+        width:auto;
+        height:auto;
+        top: 45%;
+        right: 35px;
+        cursor: pointer;
+        &:hover {
+            color: @red;
+        }      
+    }
 }

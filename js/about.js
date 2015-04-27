@@ -42,8 +42,8 @@ d3.json('./data/about.json', function (error, data) {
 					.rangeRoundBands([margin, width-margin]),
 
 		projectScale = d3.scale.ordinal()
-						.domain(["rect-sscs", "rect-typemetrics", "rect-blackmountaincollege_infographics", "rect-atlas_urbino", "rect-wttc", "rect-death_in_venice", "rect-sansavenir", "rect-whale_wars"])
-						.range(["#sscs", "#typemetrics", "#blackmountaincollege_infographics", "#atlas_urbino", "#wttc_infographics", "#death_in_venice", "#sansavenir", '#whale_wars']),
+						.domain(["rect-sscs", "rect-typemetrics", "rect-blackmountaincollege_infographics", "rect-atlas_urbino", "rect-wttc", "rect-death_in_venice", "rect-sansavenir", "rect-whale_wars", "rect-urbino_housing"])
+						.range(["#sscs", "#typemetrics", "#blackmountaincollege_infographics", "#atlas_urbino", "#wttc_infographics", "#death_in_venice", "#sansavenir", '#whale_wars', '#urbino_housing']),
 
 //		education = textures.lines()
 //					.lighter()
