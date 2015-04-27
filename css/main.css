@@ -555,7 +555,7 @@ body {
   width: auto;
   height: auto;
   top: 25px;
-  right: 35px;
+  right: 25px;
   cursor: pointer;
 }
 .portfolio-modal .close-modal span {
@@ -569,6 +569,9 @@ body {
 .portfolio-modal .close-modal:hover {
   color: #ff3f4c;
 }
+.portfolio-modal .arrow-label {
+  background-color: white;
+}
 .portfolio-modal .prev-modal {
   -webkit-transform: translateZ(0);
   color: #353531;
@@ -576,7 +579,7 @@ body {
   width: auto;
   height: auto;
   top: 45%;
-  left: 35px;
+  left: 25px;
   cursor: pointer;
 }
 .portfolio-modal .prev-modal span {
@@ -597,7 +600,7 @@ body {
   width: auto;
   height: auto;
   top: 45%;
-  right: 35px;
+  right: 25px;
   cursor: pointer;
 }
 .portfolio-modal .next-modal span {
