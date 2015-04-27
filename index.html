@@ -222,7 +222,7 @@ START PORTFOLIO MODALS
 				<div class="container firstPar">
 					<div class="col-lg-offset-1 col-lg-10 internalPar" itemprop="about">
 						<p>This is the sum of my MA course in Graphic &amp; Editorial Design at <a href="http://www.isiaurbino.net" target="_blank">Isia in Urbino</a>, Italy. I chose to go the hard way for this project so I studied a new language. In this way I was able to develop a tool that would be helpful for my future projects.</p><p>I chose the JavaScript library D3.js, since the thing I love the most doing is data visualization. Learning and developing something from scratch for this project was something I really wanted to do for a long time, and I am thankful for the chance I had in doing this.</p><p>
-	The <a href="#" target="_blank">resulting site <i class="fa fa-external-link"  target="_blank"></i></a> is built with <i class="fa fa-heart"></i>, <code itemprop="programmingLanguage">HTML</code>, <code itemprop="programmingLanguage">CSS</code> some <code itemprop="programmingLanguage">JavaScript</code> and some <code itemprop="programmingLanguage">Svg</code> as icing.</p><p>The graphs are built with: <a href="http://d3js.org" target="_blank" itemprop="programmingLanguage">d3.js</a> for the main graphic visualization, <a href="https://github.com/Tom-Alexander/regression-js" target="_blank">regression.js</a> for generating the points of the linear regression line &amp; some pure JavaScript.</p><p>This project wouldn"t have been possible without the help of my supervisor <a href="http://www.molotro.com/" target="_blank">Luciano Perondi</a>, my co-supervisor <a href="http://alongbraid.com/home/" target="_blank">Valentina Rachiele</a>, the dataset provided by <a href="http://www.robertoarista.it" target="_blank">Roberto Arista</a> and some help from the <a href="http://stackoverflow.com/" target="_blank"  itemprop="contributor">StackOverflow</a> community, especially <a href="http://www.larsko.org/HomePage" target="_blank" itemprop="contributor">Lars Kothoff</a>.</p><!--<p>Here below you can see a brief description of the project and the graphs in action, for the actual website you can click <a href="#" target="_blank" itemprop="url"><i class="fa fa-external-link"></i> here</a>.</p>-->
+	The <a href="#" target="_blank">resulting site <i class="fa fa-external-link"  target="_blank"></i></a> is built with <i class="fa fa-heart"></i>, <code>HTML</code>, <code>CSS</code> some <code>JavaScript</code> and some <code>Svg</code> as icing.</p><p>The graphs are built with: <a href="http://d3js.org" target="_blank">d3.js</a> for the main graphic visualization, <a href="https://github.com/Tom-Alexander/regression-js" target="_blank">regression.js</a> for generating the points of the linear regression line &amp; some pure JavaScript.</p><p>This project wouldn"t have been possible without the help of my supervisor <a href="http://www.molotro.com/" target="_blank">Luciano Perondi</a>, my co-supervisor <a href="http://alongbraid.com/home/" target="_blank">Valentina Rachiele</a>, the dataset provided by <a href="http://www.robertoarista.it" target="_blank">Roberto Arista</a> and some help from the <a href="http://stackoverflow.com/" target="_blank"  itemprop="contributor">StackOverflow</a> community, especially <a href="http://www.larsko.org/HomePage" target="_blank" itemprop="contributor">Lars Kothoff</a>.</p><!--<p>Here below you can see a brief description of the project and the graphs in action, for the actual website you can click <a href="#" target="_blank" itemprop="url"><i class="fa fa-external-link"></i> here</a>.</p>-->
 					</div>
 				</div>
 				<div class="container">
@@ -238,7 +238,7 @@ START PORTFOLIO MODALS
 					<p>The controls on the right of the graph allow the users to customize the graph. Both axis" have a dropdown menu with variables to choose from, it&#8217;s also possible to further the customization selecting the saturation of the circles according to a third variable.</p><p>The fourth and fifth dropdowns can be used to select a single font family or even single font styles, to see in which part of the graph they are.</p>
 					</div>
 				</div>
-				<div class="container" itemprop="sampleType">
+				<div class="container">
 					<div class="col-lg-9 col-md-12" id="svg-scatterplot-container">
 					</div>
 					<div id="svg-scatterplot-legend">
@@ -305,7 +305,7 @@ START PORTFOLIO MODALS
 					<p>The histogram below can be used insted to analyze whole groups &#8212;in this case sans and serif fonts&#8212; to see average behaviours and trends that we might, or might not, be aware of.</p><p>The range slider allow users to control the precision of the histogram, manipulating the resulting graph. The range values are between 5 and 40, with a step of 1.</p><p>The x Axis variable dropdown menu works as in the scatterplot, and allows users to pick which variable to visualize.</p><p>The small circles under the histogram paths represent the amounts of fonts at that given point &#8212;if the histogram on one point shows the value 10, there will be ten circles underneath it, going from the path to the axis below.</p>
 					</div>
 				</div>
-				<div class="container" itemprop="sampleType">
+				<div class="container">
 					<div id="svg-histogram-legend">
 						<div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="histogramLineSelector">
 							<span><input type="checkbox" id="SansLineCheckbox" checked="true"> <p>Show&#47;hide</p><p class="fontLineType" id="fontLineTypeSans">Sans Line</p></span>
@@ -1582,7 +1582,19 @@ of whaling compared to whale-watching.</p><p>Data provided clearly shows how wha
 
 
 	</script>
-
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type" : "Person",
+		"name" : "Tommaso Zennaro",
+		"url": "http://www.tomzen.net",
+		"sameAs" : [
+			"http://www.facebook.com/tioemme",
+			"http://www.linkedin.com/pub/tommaso-zennaro/80/646/884",
+			"http://www.twitter.com/tioemme"
+		] 
+	}
+    </script>
 	<script src="./js/graphs.min.js" charset="utf-8" type="text/javascript"></script>
 	<script src="./js/about.min.js" charset="utf-8" type="text/javascript"></script>
   </body>
