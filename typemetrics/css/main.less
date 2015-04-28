@@ -1,38 +1,123 @@
 body {
-	font-family: serif;
-	font-size: 15px;
-	background-color: lighten(floralwhite,25%);
+    font-size: 12px;
+    background-color: lighten(floralwhite, 15%);
+    a {
+        color: red;
+        &:hover {
+            color: black;
+            text-decoration: underline;
+        }
+    }
+
 }
 
 .navbar {
-	font-family: sans-serif;
-	margin-top: 15px;
-	.navbar-brand {
-		color: black;
-		font-size: 3em;
+    padding-top: 15px;
+    .navbar-brand {
+        color: black;
+        font-weight: bold;
+        font-size: 3.5em;
 
-		&:hover {
-			color: lighten(black, 25%);
-			text-decoration: underline;
-		}
-	}
-	
-	.navbar-nav li a{
-		color: black;
-		font-size: 1.5em;
-		font-style: italic;
-		vertical-align: bottom;
-		
-		&:hover {
-			text-decoration: underline;
-			background-color: lighten(lightgray, 15%);
-		}
-	}
-	background-color: lighten(floralwhite,25%);
-	border: none;
+        &:hover {
+            color: lighten(black, 25%);
+            text-decoration: underline;
+        }
+    }
+
+    .navbar-nav li a{
+        color: black;
+        font-size: 2em;
+        font-style: italic;
+        vertical-align: bottom;
+
+        &:hover {
+            text-decoration: underline;
+            background-color: lighten(lightgray, 15%);
+        }
+    }
+    background-color: lighten(floralwhite, 15%);
+    border: none;
+}
+
+.firstPar {
+    margin-top: 100px;
 }
 
 .textPar {
-	margin-top: 100px;
-	font-size: 2em;
+    //	font-family: sans-serif;
+    font-size: 2em;
+    blockquote {
+        font-size: 0.75em;
+    }
+}
+
+.popover {
+    box-shadow: none;
+    width: 250px;
+}
+
+#svg-scatterplot-container {
+    border-radius: 0.5%;
+    background-color: #fff;
+
+    #tempLine {
+        stroke: #000;
+    }
+    .axis{
+        path,line {
+        fill: none;
+        stroke: black;
+        }
+        text {
+        font-family: sans-serif;
+        font-size: 10px;
+        }
+    }
+}
+
+#svg-scatterplot-legend {
+    margin-top: 30px;
+    a {
+        color: red;
+    }
+    .dropdown {
+        font-size: 1.15em;
+        margin:0px;
+        margin-bottom:15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .dropdown-header {
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    ul {
+        padding-left:10px;
+        box-shadow: none;
+        height: auto;
+        max-height: 250px;
+        overflow-x: hidden;
+    }
+    #circleColorLegend {
+        span {
+            text-align: center;
+            width: 100%;
+            display: block;
+            i,p {
+                margin-bottom: 0px;
+                display: inline-block;
+                text-align: center;
+            }
+            p {
+                width: 80%;
+            }
+        }
+    }
 }
