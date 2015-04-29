@@ -2,7 +2,7 @@ body {
     font-size: 12px;
     background-color: lighten(floralwhite, 15%);
     a {
-        color: red;
+        color: orange;
         &:hover {
             color: black;
             text-decoration: underline;
@@ -56,7 +56,12 @@ body {
     width: 250px;
 }
 
+.legendPopover {
+    cursor: pointer;
+}
+
 #svg-scatterplot-container {
+    padding:0;
     border-radius: 0.5%;
     background-color: #fff;
 
@@ -78,7 +83,7 @@ body {
 #svg-scatterplot-legend {
     margin-top: 30px;
     a {
-        color: red;
+        color: orange;
     }
     .dropdown {
         font-size: 1.15em;
@@ -119,5 +124,103 @@ body {
                 width: 80%;
             }
         }
+    }
+}
+
+#svg-histogram-legend {
+    margin-top: 25px;
+    margin-bottom: 0;
+    a {
+        color: orange;
+    }
+    .dropdown {
+        margin:0px;
+        margin-bottom:15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .dropdown-header {
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    ul {
+        padding-left:10px;
+        box-shadow: none;
+        height: auto;
+        max-height: 250px;
+        overflow-x: hidden;
+    }
+
+    #histogramSliderContainer {
+        span {
+            text-align: center;
+            width: 100%;
+            display: block;
+            margin-bottom: 15px;
+            i,p {
+                margin: 0px;
+                display: inline-block;
+                text-align: center;
+            }
+            p {
+                width: 80%;
+            }
+        }
+    }
+    #histogramLineSelector {
+        span {
+            text-align: center;
+            width: 100%;
+            display: block;
+            input,p {
+                margin: 0px;
+                display: inline-block;
+                text-align: center;
+            }
+            .fontLineType {
+                margin-left: 5px;
+            }
+            #fontLineTypeSans {
+                color: #32CD32;
+            }
+            #fontLineTypeSerif {
+                color: #DC143C;
+            }
+        }
+    }
+}
+
+#svg-histogram-container {
+    border-radius: 0.5%;
+    background-color: #fff;
+    .y.axis {
+        .domain {
+            visibility: hidden;
+        }
+        line {
+            stroke: #777;
+            stroke-dasharray: 3,3;
+            stroke-width: 0.5;
+        }
+        .label {
+            font-size: 12px;
+            padding-left:20px;
+        }
+    }
+    .axis path,
+    .x.axis line {
+        fill: none;
+        stroke: #4D4F53;
+        stroke-width: 1px;
+    }
+    .axis text {
+        font-size:10px;
     }
 }

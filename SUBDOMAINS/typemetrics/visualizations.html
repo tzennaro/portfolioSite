@@ -59,16 +59,18 @@
         <p>"Scatter graphs are probably the most widely used type of point graph. They generally have quantitative scales on both axes and can accommodate many data points. Scatter graphs are used extensively for exploring relationships and correlations between two or more sets of data. After data is plotted on a scatter graph, patterns formed by the data points are used to make observations about the relationships of the data sets graphed."</p>
         <br>
         <p>"Histograms […] show the frequency with which specific values (referred to as data elements) or values within ranges (referred to as class intervals) occur in a set of data."</p>
-        <p><small>[R. Harris, Information Graphics, a comprehensive illustrated reference, Management Graphics, Atlanta GA, 1996].</small></p>
+        <p><small>[R. Harris, <i>Information Graphics, a comprehensive illustrated reference</i>, Management Graphics, Atlanta GA, 1996].</small></p>
         </blockquote>
         </div>
     </div>
     <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 textPar">
         <h1><b>Scatterplot</b></h1>
-        <p>The scatterplot below allows the users to investigate the variables and fonts as they want. Both axis' and color are, in fact, customizable.</p>
-        <p>The fonts plotted on the graph react accordingly to the changes.</p>
-        <p>Another menu allows the users to select a certain font family or a single style, adding a line showing the linear regression relative to that family.</p>
+        <p>The scatterplot below can be used to investigate single families or single fonts even; linear regression lines also show how the behaviour of the selection fits in the group.</p>
+        <p>After some discussions about which were the most interesting variables to show to generate the series of scatterplots, we figured out the best way to truly let the users explore the data, was to let them decide themselves.</p>
+        <p>Both axes can have every variable so all the variables can be mixed.</p>
+        <p>The controls on the right of the graph allow the users to customize the graph. Both axis" have a dropdown menu with variables to choose from, it&#8217;s also possible to further the customization selecting the saturation of the circles according to a third variable.</p>
+        <p>The fourth and fifth dropdowns can be used to select a single font family or even single font styles, to see in which part of the graph they are.</p>
         </div>
     </div>
     <div class="container" id='scatterplot-main'>
@@ -77,7 +79,7 @@
         <div id="svg-scatterplot-legend">
             <div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="dropdown" id="xAxisScatterplot">
-                    <p>x Axis variable &#8212; <a href="#" class="legendPopover" tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="" data-placement="bottom">Show variable info</a></p>
+                    <p>x Axis variable &#8212; <a class="legendPopover" tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="" data-placement="bottom">Show variable info</a></p>
                     <button class="btn btn-default dropdown-toggle open" type="button" id="xAxisScatterplotDropdown" data-toggle="dropdown" aria-expanded="true">
                         x Axis
                         <i class="fa fa-caret-down"></i>
@@ -86,7 +88,7 @@
                     </ul>
                 </div>
                 <div class="dropdown" id="yAxisScatterplot">
-                    <p>y Axis variable &#8212; <a href="#" class="legendPopover" tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="" data-placement="bottom">Show variable info</a></p>
+                    <p>y Axis variable &#8212; <a class="legendPopover" tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="" data-placement="bottom">Show variable info</a></p>
                     <button class="btn btn-default dropdown-toggle open" type="button" id="yAxisScatterplotDropdown" data-toggle="dropdown" aria-expanded="true">
                         y Axis
                         <i class="fa fa-caret-down"></i>
@@ -97,7 +99,7 @@
             </div>
             <div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="circleColorLegend">
                 <div class="dropdown" id="circleColor">
-                    <p>Saturation variable &#8212; <a href="#" class="legendPopover" tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="" data-placement="bottom">Show variable info</a></p>
+                    <p>Saturation variable &#8212; <a class="legendPopover" tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="" data-placement="bottom">Show variable info</a></p>
                     <button class="btn btn-default dropdown-toggle open" type="button" id="circleColorDropdown" data-toggle="dropdown" aria-expanded="true">
                         Color saturation
                         <i class="fa fa-caret-down"></i>
@@ -132,6 +134,37 @@
                 </div>
             </div>
         </div>
+    <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 textPar">
+        <h1><b>Histogram</b></h1>
+        <p>The histogram below can be used insted to analyze whole groups &#8212;in this case sans and serif fonts&#8212; to see average behaviours and trends that we might, or might not, be aware of.</p><p>The range slider allow users to control the precision of the histogram, manipulating the resulting graph. The range values are between 5 and 40, with a step of 1.</p><p>The x Axis variable dropdown menu works as in the scatterplot, and allows users to pick which variable to visualize.</p><p>The small circles under the histogram paths represent the amounts of fonts at that given point &#8212;if the histogram on one point shows the value 10, there will be ten circles underneath it, going from the path to the axis below.</p>
+        </div>
+    </div>
+                <div class="container">
+                    <div id="svg-histogram-legend">
+                        <div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="histogramLineSelector">
+                            <span><input type="checkbox" id="SansLineCheckbox" checked="true"> <p>Show&#47;hide</p><p class="fontLineType" id="fontLineTypeSans">Sans Line</p></span>
+                            <span><input type="checkbox" id="SerifLineCheckbox" checked="true"> <p>Show&#47;hide</p><p class="fontLineType" id="fontLineTypeSerif">Serif Line</p></span>
+                        </div>
+                        <div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="histogramSliderContainer">
+                            <span><i class="fa fa-minus fa-fw"></i><p id="histogramVariableLegend">Histogram precision</p><i class="fa fa-plus fa-fw"></i></span>
+                            <input type="range" min="5" max="40" step="1" value="25" id="histogramSlider"/>
+                        </div>
+                        <div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="histogramAxisContainer">
+                            <div class="dropdown" id="xAxisHistogram">
+                            <p>x Axis variable &#8212; <a class="legendPopover" tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="" data-placement="bottom">Show variable info</a></p>
+                            <button class="btn btn-default dropdown-toggle open" type="button" id="xAxisHistogramDropdown" data-toggle="dropdown" aria-expanded="true">
+                                x Axis
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="xAxisHistogramDropdown">
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12" id="svg-histogram-container" itemprop="workExample">
+                    </div>
+                </div>
     </div>
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -145,6 +178,11 @@
     <!-- Load regression.js library -->
     <script src="./js/regression.min.js" charset="utf-8" type="text/javascript"></script>
 
-    <script src="./js/scatterplot.js" charset="utf-8" type="text/javascript"></script>
+    <script src="./js/graphs.min.js" charset="utf-8" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
   </body>
 </html>
