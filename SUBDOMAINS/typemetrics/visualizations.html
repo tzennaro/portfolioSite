@@ -133,6 +133,14 @@
                     </ul>
                 </div>
             </div>
+            <div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="styleCheckLegend">
+                <span><p id='checkLeft'><i class="fa fa-square fa-fw" style="color:#32CD32"></i> Sans Fonts</p><p>Font Style</p><p id='checkRight'><i class="fa fa-square fa-fw" style="color:#DC143C"></i> Serif Fonts</p></span>
+                <span><p><input type="checkbox" id="SansMonoCheckbox" checked="true"></p><p>Monospaced</p><p><input type="checkbox" id="SerifMonoCheckbox" checked="true"></p></span>
+                <span><p><input type="checkbox" id="SansLightCheckbox" checked="true"></p><p>Light</p><p><input type="checkbox" id="SerifLightCheckbox" checked="true"></p></span>
+                <span><p><input type="checkbox" id="SansRegularCheckbox" checked="true"></p><p>Regular</p><p><input type="checkbox" id="SerifRegularCheckbox" checked="true"></p></span>
+                <span><p><input type="checkbox" id="SansBoldCheckbox" checked="true"></p><p>Bold</p><p><input type="checkbox" id="SerifBoldCheckbox" checked="true"></p></span>
+                <span><p><input type="checkbox" id="SansUltraCheckbox" checked="true"></p><p>Ultra</p><p><input type="checkbox" id="SerifUltraCheckbox" checked="true"></p></span>
+            </div>
         </div>
     <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 textPar">
@@ -178,7 +186,7 @@
     <!-- Load regression.js library -->
     <script src="./js/regression.min.js" charset="utf-8" type="text/javascript"></script>
 
-    <script src="./js/graphs.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="./js/scatterplot.js" charset="utf-8" type="text/javascript"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
             $('[data-toggle="popover"]').popover();

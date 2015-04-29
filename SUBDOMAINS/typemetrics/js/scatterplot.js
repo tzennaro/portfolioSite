@@ -174,6 +174,40 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
                     .attr({
                         'class': function (d) { return (d.FamilyName).replace(/\s/g, "-"); },
                         'id': function (d) { return (d.FamilyName).replace(/\s/g, "-") + '_' + (d.StyleName).replace(/\s/g, "-"); }
+                    })
+                    .on('mouseover', function (d) {
+                        svg.selectAll('circle')
+                            .attr('opacity', 0.25);
+
+                        d3.select(this)
+                            .transition()
+                            .duration(500)
+                            .attr({
+                                'r': 10,
+                                'opacity': 1
+                            })
+
+                        //Get this circle's x/y values, then augment for the tooltip
+                        var xPosition = (d3.select(this).attr("cx"));
+                        var yPosition = parseFloat(d3.select(this).attr("cy"));
+
+                        svg.append("text")
+                            .attr({
+                                "class": "circleTooltip",
+                                "x": xPosition,
+                                "y": yPosition - (height/15),
+                                'pointer-events': 'none',
+                                "text-anchor": (xPosition < (width/2)) ? "start" : "end"
+                            })
+                            .text("Family: " + d.FamilyName + ";" + "Style: " + d.StyleName + ";" + SelX + ": " + d[SelX] + ", " + SelY + ": " + d[SelY])
+                            .call(wrap, 50, xPosition);
+                    })
+                    .on('mouseout', function (d) {
+                        svg.selectAll('.circleTooltip').remove();
+                        deselectCircles()
+                        selectCircles(SelFont, 0)
+                        selectSingleCircle(SelWeight, 0)
+
                     });
 
     updateCircles();
@@ -212,7 +246,7 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
         $("#fontFamilyDropdown").val(SelFont);
         deselectCircles();
         if (SelFont !== '---') {
-            selectCircles(SelFont);
+            selectCircles(SelFont, 500);
             setFontWeightDropdown(SelFont);
             tempData = dataset.filter(function (d) { return d['FamilyName'] == SelFont; })
             lineGenerator(SelX, SelY, tempData, tempLine, 0);
@@ -232,8 +266,8 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
         $("#fontWeightDropdown").html(SelWeight + ' <i class="fa fa-caret-down"></i>');
         $("#fontWeightDropdown").val(SelWeight);
         if (SelWeight !== '---') {
-            selectCircles(SelFont);
-            selectSingleCircle(SelWeight);
+            selectCircles(SelFont, 500);
+            selectSingleCircle(SelWeight, 500);
         }
         else { selectCircles(SelFont); }
       });
@@ -283,6 +317,22 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
         updateCircles();
         $('#SelColLegend').text(SelCol);
       });
+
+    var monoSans = monoFont(sansData),
+        monoSerif = monoFont(serifData),
+        regularSans = regularFont(sansData),
+        regularSerif = regularFont(serifData),
+        lightSans = lightFont(sansData),
+        lightSerif = lightFont(serifData),
+        boldSans = boldFont(sansData),
+        boldSerif = boldFont(serifData),
+        ultraSans = ultraFont(sansData),
+        ultraSerif = ultraFont(serifData);
+
+//    d3.select('#SansMonoCheckbox').on('change', function (mono) {
+//        console.log(monoSans);
+//        (this.checked === true) ?  svg.selectAll('circle').filter(monoSans).style("visibility", "hidden") : svg.selectAll('circle').filter((regularFont(sansData))).style("visibility", "visible")}
+//    );
 
     function imgDirectory(getInfo) {
         var imageScale = d3.scale.ordinal()
@@ -336,29 +386,29 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
             });
     }
 
-    function selectCircles(SelFont) {
+    function selectCircles(SelFont, duration) {
         svg.select('#circles')
             .selectAll('.' + (SelFont).replace(/\s/g, "-"))
             .transition()
-            .duration(500)
+            .duration(duration)
             .attr({
                 'stroke': 'black',
                 'stroke-width': 1,
                 'opacity': 1,
-                'r': 4.5
+                'r': 6
             });
     }
 
-    function selectSingleCircle(SelWeight) {
+    function selectSingleCircle(SelWeight, duration) {
         svg.select('#circles')
             .select('#' + (SelFont).replace(/\s/g, "-") + '_' +(SelWeight).replace(/\s/g, "-"))
             .transition()
-            .duration(500)
+            .duration(duration)
             .attr({
                 'stroke': 'black',
                 'stroke-width': 2,
                 'opacity': 1,
-                'r': 7.5
+                'r': 10
             });
     }
 
@@ -366,7 +416,7 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
         circles.attr({
                 'stroke': 'black',
                 'stroke-width': 0,
-                'r': 3,
+                'r': 4,
                 'opacity': 0.5
             });
     }
@@ -389,4 +439,82 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
                 .text(function (d) { return d.StyleName; });
         }
     }
+
+    function wrap(text, width, xPosition) {
+        text.each(function() {
+            var text = d3.select(this),
+                words = text.text().split(/;/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                y = text.attr("y"),
+                dy = text.attr("dy") ? text.attr("dy") : 0,
+                tspan = text.text(null).append("tspan").attr("x", xPosition).attr("y", y).attr("dy", dy + "em");
+            while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan").attr("x", xPosition).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                }
+            }
+        });
+    }
+
+    function monoFont(fontStyle) { return fontStyle.filter(function (d) { return d.Spacing === "Mono"; }); }
+
+    function regularFont(fontStyle) { return fontStyle.filter(function (d) { return
+            d.StyleName.match(/Regular/g) ||
+            d.StyleName.match(/Book/g) ||
+            d.StyleName.match(/Roman/g) ||
+            d.StyleName.match(/Normal/g) ||
+            d.StyleName.match(/^Text$/g) ||
+            d.StyleName.match(/^Condensed$/) ||
+            d.StyleName.match(/^Condensed Subhead$/) ||
+            d.StyleName.match(/^Semicondensed$/) ||
+            d.StyleName.match(/^Extended$/) ||
+            d.StyleName.match(/^Semiextended$/) ||
+            d.StyleName.match(/^Caption$/) ||
+            d.StyleName.match(/^Display$/g) ||
+            d.StyleName.match(/^Subhead$/g) ||
+            d.StyleName.match(/Compact/g) ||
+            d.StyleName.match(/Sub-caption/g) ||
+            d.StyleName.match(/Mittelschrift/g) ||
+            d.StyleName.match(/Address/g) ||
+            d.StyleName.match(/Name/g) ||
+            d.StyleName.match(/Medium/g);
+        });
+    }
+
+    function lightFont(fontStyle) { return fontStyle.filter(function (d) { return
+            d.StyleName.match(/Light/g) ||
+            d.StyleName.match(/Ultralight/g) ||
+            d.StyleName.match(/Semilight/g) ||
+            d.StyleName.match(/Thin/g) ||
+            d.StyleName.match(/Hairline/g) ||
+            d.StyleName.match(/Extralight/g);
+        });
+    }
+
+    function boldFont(fontStyle) { return fontStyle.filter(function (d) { return
+            d.StyleName.match(/Bold/g) ||
+            d.StyleName.match(/Demi/g) ||
+            d.StyleName.match(/Semibold/g);
+        });
+    }
+
+    function ultraFont(fontStyle) { return fontStyle.filter(function (d) { return
+            d.StyleName.match(/Black/g) ||
+            d.StyleName.match(/Heavy/g) ||
+            d.StyleName.match(/Super/g) ||
+            d.StyleName.match(/^Ultra$/g) ||
+            d.StyleName.match(/Ultrabold/g) ||
+            d.StyleName.match(/Nord/g) ||
+            d.StyleName.match(/Extrabold/g);
+        });
+    }
+
 });
