@@ -383,6 +383,30 @@ body {
 #svg-scatterplot-legend #circleColorLegend span p {
   width: 80%;
 }
+#svg-scatterplot-legend #styleCheckLegend span {
+  text-align: center;
+  font-size: 0.85em;
+  width: 100%;
+  display: block;
+}
+#svg-scatterplot-legend #styleCheckLegend span i,
+#svg-scatterplot-legend #styleCheckLegend span p {
+  margin-bottom: 0px;
+  display: inline-block;
+  text-align: center;
+}
+#svg-scatterplot-legend #styleCheckLegend span p {
+  width: 33%;
+}
+#svg-scatterplot-legend #styleCheckLegend span #checkLeft {
+  text-align: left;
+}
+#svg-scatterplot-legend #styleCheckLegend span #checkRight {
+  text-align: right;
+}
+#svg-scatterplot-legend #styleCheckLegend #styleCheckLegendHeader {
+  font-size: 1em;
+}
 #svg-histogram-legend {
   margin-bottom: 0;
 }

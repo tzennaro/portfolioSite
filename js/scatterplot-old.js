@@ -318,55 +318,6 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
         $('#SelColLegend').text(SelCol);
       });
 
-    var sansCircles = circles.filter(function (d) {return d.Grazie === "Sans"; }),
-        serifCircles = circles.filter(function (d) {return d.Grazie === "Serif"; }),
-
-        monoSans = monoFont(sansCircles),
-        monoSerif = monoFont(serifCircles),
-        regularSans = regularFont(sansCircles),
-        regularSerif = regularFont(serifCircles),
-        lightSans = lightFont(sansCircles),
-        lightSerif = lightFont(serifCircles),
-        boldSans = boldFont(sansCircles),
-        boldSerif = boldFont(serifCircles),
-        ultraSans = ultraFont(sansCircles),
-        ultraSerif = ultraFont(serifCircles);
-
-    d3.select('#SansMonoCheckbox').on('change', function () {
-        (this.checked === true) ?  monoSans.style("visibility", "visible") : monoSans.style("visibility", "hidden")}
-    );
-    d3.select('#SerifMonoCheckbox').on('change', function () {
-        (this.checked === true) ?  monoSerif.style("visibility", "visible") : monoSerif.style("visibility", "hidden")}
-    );
-
-    d3.select('#SansLightCheckbox').on('change', function () {
-        (this.checked === true) ?  lightSans.style("visibility", "visible") : lightSans.style("visibility", "hidden")}
-    );
-    d3.select('#SerifLightCheckbox').on('change', function () {
-        (this.checked === true) ?  lightSerif.style("visibility", "visible") : lightSerif.style("visibility", "hidden")}
-    );
-
-    d3.select('#SansRegularCheckbox').on('change', function () {
-        (this.checked === true) ?  regularSans.style("visibility", "visible") : regularSans.style("visibility", "hidden")}
-    );
-    d3.select('#SerifRegularCheckbox').on('change', function () {
-        (this.checked === true) ?  regularSerif.style("visibility", "visible") : regularSerif.style("visibility", "hidden")}
-    );
-
-    d3.select('#SansBoldCheckbox').on('change', function () {
-        (this.checked === true) ?  boldSans.style("visibility", "visible") : boldSans.style("visibility", "hidden")}
-    );
-    d3.select('#SerifBoldCheckbox').on('change', function () {
-        (this.checked === true) ?  boldSerif.style("visibility", "visible") : boldSerif.style("visibility", "hidden")}
-    );
-
-    d3.select('#SansUltraCheckbox').on('change', function () {
-        (this.checked === true) ?  ultraSans.style("visibility", "visible") : ultraSans.style("visibility", "hidden")}
-    );
-    d3.select('#SerifUltraCheckbox').on('change', function () {
-        (this.checked === true) ?  ultraSerif.style("visibility", "visible") : ultraSerif.style("visibility", "hidden")}
-    );
-
     function imgDirectory(getInfo) {
         var imageScale = d3.scale.ordinal()
             .domain(['select',"xHeight","CapHeight","Weight","Contrast","Lesser Thickness Slope","Superior Overshooting","Inferior Overshooting","Ascenders","Descenders","n Expansion","o Expansion","n/o Ratio","O Expansion","R Expansion","R/O Ratio","o Average Squaring","o Internal Squaring","o External Squaring"])
@@ -496,23 +447,4 @@ var axisData = d3.keys(dataset[0]).filter(function (d) { return d !== "FamilyNam
             }
         });
     }
-
-    function monoFont(fontStyle) { return fontStyle.filter(function (d) { return d.Spacing === "Mono"; }); }
-
-    function regularFont(fontStyle) { return fontStyle.filter(function (d) { return d.StyleName.match(/Regular/g) || d.StyleName.match(/Book/g) || d.StyleName.match(/Roman/g) || d.StyleName.match(/Normal/g) || d.StyleName.match(/^Text$/g) || d.StyleName.match(/^Condensed$/) || d.StyleName.match(/^Condensed Display$/) || d.StyleName.match(/^Condensed Caption$/) || d.StyleName.match(/^Condensed Subhead$/) || d.StyleName.match(/^Semicondensed$/) || d.StyleName.match(/^Extended$/) || d.StyleName.match(/^Semiextended$/) || d.StyleName.match(/^Caption$/) || d.StyleName.match(/^Display$/g) || d.StyleName.match(/^Subhead$/g) || d.StyleName.match(/Compact/g) || d.StyleName.match(/Sub-caption/g) || d.StyleName.match(/Mittelschrift/g) || d.StyleName.match(/Address/g) || d.StyleName.match(/Name/g) || d.StyleName.match(/Medium/g);
-        });
-    }
-
-    function lightFont(fontStyle) { return fontStyle.filter(function (d) { return d.StyleName.match(/Light/g) || d.StyleName.match(/Ultralight/g) || d.StyleName.match(/Semilight/g) || d.StyleName.match(/Thin/g) || d.StyleName.match(/Hairline/g) || d.StyleName.match(/Extralight/g);
-        });
-    }
-
-    function boldFont(fontStyle) { return fontStyle.filter(function (d) { return d.StyleName.match(/Bold/g) || d.StyleName.match(/Demi/g) || d.StyleName.match(/Semibold/g);
-        });
-    }
-
-    function ultraFont(fontStyle) { return fontStyle.filter(function (d) { return d.StyleName.match(/Black/g) || d.StyleName.match(/Heavy/g) || d.StyleName.match(/Super/g) || d.StyleName.match(/^Ultra$/g) || d.StyleName.match(/Ultrabold/g) || d.StyleName.match(/Nord/g) || d.StyleName.match(/Extra Bold/g) || d.StyleName.match(/Extrabold/g);
-        });
-    }
-
 });

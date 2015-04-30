@@ -128,6 +128,9 @@ body a:hover {
 #svg-scatterplot-legend #styleCheckLegend span #checkRight {
   text-align: right;
 }
+#svg-scatterplot-legend #styleCheckLegend #styleCheckLegendHeader {
+  font-size: 1.15em;
+}
 #svg-histogram-legend {
   margin-top: 25px;
   margin-bottom: 0;

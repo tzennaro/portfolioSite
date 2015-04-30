@@ -45,7 +45,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="./home.html">Home</a></li>
                 <li><a href="./visualizations.html"><b>Visualizations</b></a></li>
-                <li><a href="./explanations.html">Explanations</a></li>
+<!--                <li><a href="./explanations.html">Explanations</a></li>-->
                 <li><a href="./about.html">About</a></li>
             </ul>
         </div>
@@ -134,6 +134,7 @@
                 </div>
             </div>
             <div class="container col-lg-3 col-md-6 col-sm-6 col-xs-12" id="styleCheckLegend">
+                <p id="styleCheckLegendHeader">Show/Hide Font Styles</p>
                 <span><p id='checkLeft'><i class="fa fa-square fa-fw" style="color:#32CD32"></i> Sans Fonts</p><p>Font Style</p><p id='checkRight'><i class="fa fa-square fa-fw" style="color:#DC143C"></i> Serif Fonts</p></span>
                 <span><p><input type="checkbox" id="SansMonoCheckbox" checked="true"></p><p>Monospaced</p><p><input type="checkbox" id="SerifMonoCheckbox" checked="true"></p></span>
                 <span><p><input type="checkbox" id="SansLightCheckbox" checked="true"></p><p>Light</p><p><input type="checkbox" id="SerifLightCheckbox" checked="true"></p></span>
@@ -186,7 +187,7 @@
     <!-- Load regression.js library -->
     <script src="./js/regression.min.js" charset="utf-8" type="text/javascript"></script>
 
-    <script src="./js/scatterplot.js" charset="utf-8" type="text/javascript"></script>
+    <script src="./js/graphs.min.js" charset="utf-8" type="text/javascript"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
             $('[data-toggle="popover"]').popover();
