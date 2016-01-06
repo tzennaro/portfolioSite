@@ -124,6 +124,19 @@
         ]
     },
     {
+        "name": "UCLA Energy Atlas",
+        "id": "rect-ucla-energy-atlas",
+        "dateStart": "2015-02-01",
+        "dateEnd": "2015-04-31",
+        "type": "work",
+        "subtype": "realProject",
+        "kind": [
+            "data visualization",
+            "information architecture",
+            "interaction design"
+        ]
+    },
+    {
         "name": "Freelance Graphic Designer",
         "dateStart": "2011-09-01",
         "dateEnd": "2015-05-14",
@@ -196,7 +209,18 @@
     {
         "name": "Internship @ Accurat",
         "dateStart": "2015-05-18",
-        "dateEnd": "2015-08-31",
+        "dateEnd": "2015-06-30",
+        "type": "experience",
+        "subtype": "",
+        "kind": [
+            "data visualization",
+            "information architecture"
+        ]
+    },
+    {
+        "name": "Interaction Designer @ Accurat",
+        "dateStart": "2015-07-01",
+        "dateEnd": "2016-12-31",
         "type": "experience",
         "subtype": "",
         "kind": [
