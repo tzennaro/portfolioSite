@@ -45,27 +45,6 @@ d3.json('./data/about.json', function (error, data) {
                         .domain(["rect-sscs", "rect-typemetrics", "rect-blackmountaincollege_infographics", "rect-atlas_urbino", "rect-wttc", "rect-death_in_venice", "rect-sansavenir", "rect-whale_wars", "rect-urbino_housing", "rect-ucla-energy-atlas"])
                         .range(["#sscs", "#typemetrics", "#blackmountaincollege_infographics", "#atlas_urbino", "#wttc_infographics", "#death_in_venice", "#sansavenir", '#whale_wars', '#urbino_housing', '#ucla-energy-atlas']),
 
-//		education = textures.lines()
-//					.lighter()
-//					.thicker()
-//					.orientation("3/8")
-//					.stroke("#F4F7F5")
-//					.background("#FF3F4C"),
-//
-//		work = textures.lines()
-//					.lighter()
-//					.thicker()
-//					.orientation("3/8")
-//					.stroke("#F4F7F5")
-//					.background("#72ff80"),
-//
-//		experience = textures.lines()
-//					.lighter()
-//					.thicker()
-//					.orientation("3/8")
-//					.stroke("#F4F7F5")
-//					.background("#59d0ff"),
-
         //X Axis creation
         xAxis = d3.svg.axis()
                     .scale(xScale)
