@@ -1,0 +1,181 @@
+@media screen and (max-width: 499px) {
+    #mainContent {
+        width: 90%;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .corner {
+        font-size: 0.5rem;
+    }
+    #rightVertical {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    #leftVertical {
+        visibility: hidden;
+    }
+    #leftHorizontal {
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 999px) {
+    #mainContent {
+        width: 80%;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+    .corner {
+        font-size: 0.75rem;
+    }
+    #rightVertical {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    #leftVertical {
+        left: 1.5rem;
+        bottom: 1.75rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #mainContent {
+        width: 80%;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+    .corner {
+        font-size: 1rem;
+    }
+    #rightVertical {
+        right: -5.75rem;
+        top: 1rem;
+        transform-origin: 0 100%;
+        transform: rotateZ(90deg);
+    }
+    #leftVertical {
+        transform-origin: 0 100%;
+        transform: rotateZ(-90deg);
+        left: 1.5rem;
+        bottom: 1.75rem;
+        visibility: visible;
+    }
+    #leftHorizontal {
+        visibility: visible;
+    }
+} 
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    color: #000080;
+}
+
+#worldpotusImg {
+    background: url("../imgNew/worldpotus.png");
+}
+#whoImg {
+    background: url("../imgNew/who.png");
+}
+#merchantImg {
+    background: url("../imgNew/merchant.png");
+}
+#oldsiteImg {
+    background: url("../imgNew/oldsite.png");
+}
+
+#worldpotusImg, #whoImg, #merchantImg, #oldsiteImg {
+    display: block;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity .35s ease-out;
+}
+
+a {
+    color: #4682B4;
+    background-color: #fdddb2;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #aaa;
+}
+
+a:hover {
+    color: #FF4500;
+}
+
+#worldpotus:hover #worldpotusImg {
+    display: block;
+    opacity: 1;
+}
+
+#who:hover #whoImg {
+    display: block;
+    opacity: 1;
+}
+
+#merchant:hover #merchantImg {
+    display: block;
+    opacity: 1;
+}
+
+#oldsite:hover #oldsiteImg {
+    display: block;
+    opacity: 1;
+}
+
+.corner {
+    font-family: 'Roboto', serif;
+    font-weight: 500;
+}
+
+#rightHorizontal {
+    position: fixed;
+    top: 0.5rem;
+    right: 1.5rem;
+}
+
+#mainContainer {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#mainContent {
+    /* align it vertically */
+    margin: auto 0;
+    max-width: 1000px; 
+    padding: 0;
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+}
+
+#rightVertical {
+    display: block;
+    position: fixed;
+    text-align: end;
+}
+
+#leftHorizontal {
+    position: fixed;
+    bottom: 0.5rem;
+    left: 2rem;
+}
+
+#leftVertical {
+    display: block;
+    position: fixed;
+    text-align: end;
+}
