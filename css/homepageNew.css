@@ -93,8 +93,8 @@ body {
 #starbucksImg, #worldpotusImg, #whoImg, #merchantImg, #oldsiteImg {
     display: block;
     opacity: 0;
-    min-width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
