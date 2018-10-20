@@ -76,23 +76,18 @@ body {
 
 #starbucksImg {
     background: url("../imgNew/starbucks.png");
-    object-fit: cover;
 }
 #worldpotusImg {
     background: url("../imgNew/worldpotus.png");
-    object-fit: cover;
 }
 #whoImg {
     background: url("../imgNew/who.png");
-    object-fit: cover;
 }
 #merchantImg {
     background: url("../imgNew/merchant.png");
-    object-fit: cover;
 }
 #oldsiteImg {
     background: url("../imgNew/oldsite.png");
-    object-fit: cover;
 }
 
 #starbucksImg, #worldpotusImg, #whoImg, #merchantImg, #oldsiteImg {
@@ -105,6 +100,8 @@ body {
     left: 0;
     z-index: -1;
     transition: opacity .35s ease-out;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 a {
