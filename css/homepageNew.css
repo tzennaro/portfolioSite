@@ -73,6 +73,11 @@ body {
     color: #000080;
 }
 
+
+#starbucksImg {
+    background: url("../imgNew/starbucks.png");
+}
+
 #worldpotusImg {
     background: url("../imgNew/worldpotus.png");
 }
