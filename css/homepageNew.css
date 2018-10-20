@@ -77,7 +77,6 @@ body {
 #starbucksImg {
     background: url("../imgNew/starbucks.png");
 }
-
 #worldpotusImg {
     background: url("../imgNew/worldpotus.png");
 }
@@ -91,11 +90,11 @@ body {
     background: url("../imgNew/oldsite.png");
 }
 
-#worldpotusImg, #whoImg, #merchantImg, #oldsiteImg {
+#starbucksImg, #worldpotusImg, #whoImg, #merchantImg, #oldsiteImg {
     display: block;
     opacity: 0;
-    width: 100vw;
-    height: 100vh;
+    min-width: 100%;
+    height: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -115,6 +114,11 @@ a:visited {
 
 a:hover {
     color: #FF4500;
+}
+
+#starbucks:hover #starbucksImg {
+    display: block;
+    opacity: 1;
 }
 
 #worldpotus:hover #worldpotusImg {
