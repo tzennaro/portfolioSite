@@ -101,7 +101,7 @@ body {
     z-index: -1;
     transition: opacity .35s ease-out;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 105%;
 }
 
 a {
